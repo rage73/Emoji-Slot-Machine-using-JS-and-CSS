@@ -1,1 +1,1 @@
-# Slot-Machine-using-JS-and-CSS
+# Slot Machine using JS and CSS
