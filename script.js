@@ -2,7 +2,7 @@ let value1 = document.getElementById('value1');
 let value2 = document.getElementById('value2');
 let value3 = document.getElementById('value3');
 
-let btnSpin = document.getElementById('btnSpin');
+let btnStop = document.getElementById('btnStop');
 let inpSpeed = document.getElementById('inpSpeed');
 
 let values = [
@@ -18,6 +18,7 @@ let animationId;
 function updateAnimation(newSpeed) {
     if (animationId) clearInterval(animationId);
 
+    document.documentElement.style.setProperty('--speed', newSpeed);
     animationId = setInterval(() => {
 
         value1.innerText = getRandomValue();
@@ -27,7 +28,18 @@ function updateAnimation(newSpeed) {
     }, 1000/newSpeed);
 }
 
-inpSpeed.onchange = function (e) {
-    document.documentElement.style.setProperty('--speed', e.target.value);
-    updateAnimation(e.target.value);
+btnStop.onclick = function () {
+    if(this.innerHTML === 'STOP') {
+        this.innerHTML = 'SPIN';
+        clearInterval(animationId);
+        value1.classList.remove('animate');
+        value2.classList.remove('animate');
+        value3.classList.remove('animate');
+    } else {
+        this.innerHTML = 'STOP';
+        updateAnimation(5);
+        value1.classList.add('animate');
+        value2.classList.add('animate');
+        value3.classList.add('animate');
+    }
 }

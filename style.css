@@ -38,9 +38,12 @@
     line-height: 250px;
 }
 
-.slot > .value {
+.value {
     display: inline-block;
     z-index: 3;
+}
+
+.animate {
     animation-name: slotspin;
     animation-iteration-count: infinite;
     animation-duration: calc(1s/var(--speed));
@@ -58,10 +61,10 @@
     transform: translateY(-35px);
 }
 
-#btnSpin {
+#btnStop {
     height: 150px;
     width: 150px;
-    background-color: orangered;
+    background-color: blue;
     border: 1px dashed black;
     border-radius: 50%;
     color: white;
