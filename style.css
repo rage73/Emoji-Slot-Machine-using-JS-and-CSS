@@ -61,7 +61,7 @@
     transform: translateY(-35px);
 }
 
-#btnStop {
+.spin{
     height: 150px;
     width: 150px;
     background-color: blue;
@@ -71,6 +71,11 @@
     font-family: 'Times New Roman', Times, serif;
     font-size: 30pt;
 }
+
+.stop{
+    background-color: orangered;
+}
+
 
 @keyframes slotspin {
     0% {
